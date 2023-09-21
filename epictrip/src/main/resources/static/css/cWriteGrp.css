@@ -1,0 +1,93 @@
+section { min-height: calc(100vh - 240px); padding: 0 12%; margin-top: 200px; } 
+
+.selecAll { padding: 20px; border: 1px solid #ddd; border-radius: 10px; } 
+
+.opLine { display: flex; align-items: center; } 
+.opLine span { display: flex; align-items: center; justify-content: center; width: 260px; height: 60px; margin-right: calc(100vw * 45 / 1920); background: #eee; font-size: 15px; font-family: pBold; } 
+.opLine .options { width: 70%; display: flex; align-items: center; flex-wrap: wrap; }
+.schFrm input[type="radio"] { display: none; } 
+.schFrm input[type="radio"] + label { padding: 7px 16px; margin-right: calc(100vw * 13 /1920); border-radius: 20px; font-size: 15px; font-family: pRegular; cursor: pointer; transition: all .2s; } 
+.schFrm input[type="radio"]:checked + label { background: #41ff3b5a; } 
+
+.teamSelec { margin-top: 15px; display: flex; align-items: center; } 
+.teamSelec .teamTxt { display: flex; align-items: center; justify-content: center; width: 260px; height: 50px; margin-right: 40px; border: 1px solid var(--color-line); background: #fff; border-radius: 5px; font-size: 15px; font-family: pBold; } 
+.teamSelec .rangeAll { width: 60%; display: flex; align-items: center; } 
+.rangeAll .rangeValue { margin: 0 5px 0 10px; font-size: 16px; font-family: pSemi; } 
+.rangeAll .teamNum { margin-left: 30px; appearance: none; height: 6px; border-radius: 5px; background: #ededed; width: 100%; } 
+.teamNum::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 17px; height: 17px; border-radius: 50%; background: var(--dark-yellow); cursor: pointer; -webkit-transition: background 0.15s ease-in-out; transition: background 0.15s ease-in-out; } 
+
+.teamNum::-webkit-slider-thumb:hover { background: var(--yellow); } 
+.teamNum:active::-webkit-slider-thumb { background: var(--yellow); } 
+
+.dateSelec { margin-top: 15px; display: flex; align-items: center; } 
+.dateSelec span { display: flex; align-items: center; justify-content: center; width: 260px; height: 50px; margin-right: 40px; border: 1px solid var(--color-line); background: #fff; border-radius: 5px; font-size: 15px; font-family: pBold; } 
+.dateSelec .dateInput { display: flex; align-items: center; justify-content: space-around; } 
+.dateSelec .dpDiv { position: relative; display: flex; align-items: center; width: 300px; height: 45px; padding-left: 60px; margin-right: 30px; border: 1px solid #ddd; border-radius: 5px; transition: all .2s; } 
+.dateSelec .dpDiv::before { content: ''; position: absolute; top: 27%; left: 7%; width: 20px; height: 20px; background: url(../source/dateGr.png) center center; background-size: cover; } 
+.dateSelec .dpDiv:focus-within { border-color: #2ce126; } 
+.dpDiv .datePick { width: 100%; font-size: 14px; font-family: pRegular; } 
+
+/* ----------- date custom --------------*/
+
+.ui-datepicker { top: 780px !important; width: 250px !important; } 
+.ui-widget.ui-widget-content { /* 전체 박스 */
+border:0px; box-shadow: 2px 2px 8px #a4a4a44b; padding:0; border-radius: 10px; } 
+.ui-widget-header { /* 헤더 (화살표/날짜표시 영역) */ font-size: 15px; border: 0px; border-radius: 0px; } 
+.ui-widget-header .ui-icon { /* 이전,다음 화살표 */
+background: none; } 
+.ui-datepicker-prev span { display: none !important; } 
+.ui-datepicker-next span { display: none !important; } 
+.ui-datepicker-prev { /* 이전 화살표 */
+width: 23px !important; height: 23px !important; border-radius: 50% !important; text-align:center; line-height: 1.5em; cursor: pointer; } 
+.ui-datepicker-prev::before { content:'\02C2'; } 
+.ui-datepicker-next { /* 다음 화살표 */
+width: 23px !important; height: 23px !important; border-radius: 50% !important; text-align:center; line-height: 1.5em; cursor: pointer; } 
+.ui-datepicker-next::before { content:'\02C3'; } 
+
+.ui-datepicker .ui-datepicker-header { background: #fff; border-radius: 10px 10px 0 0; } 
+.ui-datepicker .ui-datepicker-title { color: var(--color-main); } 
+.ui-datepicker .ui-datepicker-title .ui-datepicker-year { width: 70px; font-family: pRegular; } 
+.ui-datepicker .ui-datepicker-title .ui-datepicker-month { width: 70px; font-family: pRegular; } 
+.ui-datepicker th { /* 요일 영역 */ background : #955ef5; } 
+.ui-datepicker th span { /* 요일 텍스트 */ font-size:14px; color: #fff; font-family: pRegular; } 
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active { /* 일자 기본영역 */
+border:0px; background: none; font-family: pLight; font-size: 13px; text-align: center; width: 22px; height: 22px; line-height: 22px; padding:0; border-radius: 3px; margin: 0 auto; } 
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight { /* 오늘일자 */
+border:0px; background:var(--yellow) !important; color: #000 !important; } 
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover { /* 선택 일자 */
+border: 1px solid var(--color-main) !important; background: var(--color-main) !important; } 
+/*-------------------------------------------------*/
+
+
+.detailWrite { padding: 25px 30px; margin: 30px 0 40px 0; border: 1px solid #ddd; border-radius: 10px; } 
+
+.imgUpAll { background: #FFF; margin: 1em auto; min-height: 300px;  } 
+.imgUpAll span { margin-left: 5px; color: #333; font-size: 20px; font-family: pBold;}
+#fileInput { display: none; }
+.uploadedBtn { display: none;  margin-left: 10px; padding: 7px 12px; border-radius: 10px; color: #444; background: #e8e8e8; font-size: 15px; font-family: pSemi; transition: all .2s; cursor: pointer;}
+.uploadedBtn.uploaded { display: inline-block;  }
+.uploadedBtn.uploaded:hover { background: #ffd4389f; }
+.wrongTxt { width: 100%; color: #777; font-size: 20px; font-family: pBold; text-align: center;}
+
+.fileLabel { position: relative; padding-top: 40px; display: flex; align-items: center; justify-content: center; background: #00000016; width: 100%; height: 100%; cursor: pointer; opacity: .5; transition: all .2s;} 
+.fileLabel::before { content: ""; position: absolute; top: 38%; left: 48%; width: 64px; height: 64px; background: url(../source/imgIco.png) center center; background-size: cover; opacity: .4; z-index: 1; } 
+.fileLabel:hover { background: #0000002b; opacity: 0.9;}
+
+.imgArea { display: flex; align-items: center; margin: 25px 0;  width: 100%; height: 460px; overflow: hidden; background: #eee; border-radius: 8px; } 
+.imgArea img { width: 100%; } 
+
+.titleBox input { margin: 10px 0 30px 0; padding: 10px 15px; width: 97%; border-radius: 8px; border: 1px solid var(--color-line); font-size: 18px; font-family: pMedium; transition: all .2s; }
+.titleBox input:focus { border-color: #2ce126; } 
+
+.contextBox { padding: 15px; border: 1px solid var(--color-line);border-radius: 10px; }
+.contextBox textarea { width: 100%; height: 300px;  font-family: pRegular; font-size: 16px; line-height: 140%; resize: none;}
+.contextBox:focus-within { border-color: #2ce126; } 
+
+.submitBtn { display: block; margin: 30px auto 50px auto; width: 20%; padding: 15px 0; background: #e8e8e8; border-radius: 10px; font-size: 17px; font-family: pSemi; transition: all .2s; cursor: pointer; } 
+.submitBtn:hover { background: #ffd4389f; } 
+
+
+.txtTitle { margin: 5px 0 15px 5px; color: #333; font-size: 20px; font-family: pBold;}
+#charCount { display: inline-block; margin: 10px 0 0 10px; font-size: 13px; font-family: pMedium; color: #999;}
+

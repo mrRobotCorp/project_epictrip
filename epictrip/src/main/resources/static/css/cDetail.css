@@ -1,0 +1,36 @@
+section { min-height: calc(100vh - 240px); padding: 0 13%; margin-top: 200px;}
+
+.sDetailSection { margin-bottom: 70px; } 
+
+.mapInfoAll { display: flex; align-items: center; justify-content: space-between;}
+
+.schMap { width: calc(100vw * 580 / 1920); height: calc(100vw * 850 / 1920); border-radius: 10px; border: 2px solid #ddd;}
+.schInfo { display: flex; align-items: center; flex-direction: column; justify-content: flex-start; width: calc(100vw * 700 / 1920); height: calc(100vw * 790 / 1920); border-radius: 10px; padding: 30px; border: 1px solid #ddd;}
+
+.infoTitle { width: 100%; margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between; font-size: 17px; font-family: pSemi;}
+.infoTitle .btn { opacity: .5; cursor: pointer; transition: all .2s;}
+.infoTitle .btn:hover { opacity: 1; }
+.infoTitle .backBtn { width: 18px; height: 18px; background: url(../source/arrow_l.png) center center; background-size: cover;  }
+
+.infoTitle .uptBtn { margin-right: 10px; width: 24px; height: 24px; background: url(../source/edit.png) center center; background-size: cover; }
+.infoTitle .delBtn { width: 24px; height: 24px; background: url(../source/delIco.png) center center; background-size: cover; }
+
+.schInfo .schDays { width: 100%; height: 65px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; color: #000000d1; background: #8242f024; border-radius: 10px; font-family: pRegular; font-size: 18px; letter-spacing: 1px; }
+
+.schInfo .schLoc { width: 100%; position: relative; margin: 0 0 40px 100px; font-size: 17px; }
+.schInfo .schLoc::before { position: absolute; top: -15%; left: -5%; content: ''; background: url(../source/loc.png) center center; background-size: cover; width: 23px; height: 23px; }
+
+.daySch { width: 100%; height: 690px; padding-top: 10px; overflow-y: scroll; }
+.daySch::-webkit-scrollbar { width: 7px; } 
+.daySch::-webkit-scrollbar-thumb { background-color: #cecece; border: 3px solid transparent; border-radius: 20px; } 
+.daySch::-webkit-scrollbar-track { background-color: transparent; } 
+
+.daySch .dNum { padding: 6px 15px; margin-right: 10px; background: var(--yellow); color: #333; border-radius: 15px;}
+.daySch .date { padding: 5px 15px; border-left: 1px solid var(--color-line); color: #555; font-size: 14px; }
+
+.dayOne { margin-bottom: 50px;} 
+.dayTxt { margin: 0 0 30px 20px;}
+.daySch .schMemo { margin: 0 0 20px 30px; display: flex; align-items: center; }
+.daySch .schMemo .memoCnt { margin-right: 20px; display: flex; align-items: center; justify-content: center; width: 23px; height: 23px; background: var(--color-main); color: #fff; font-family: pRegular; font-size: 15px; border-radius: 15px; }
+.daySch .schMemo .memoTxt { width: 85%; padding: 15px; border: 1px solid var(--color-line); border-radius: 10px; font-size: 15px; }
+.mNone { color: #888;}

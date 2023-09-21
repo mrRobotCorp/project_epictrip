@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >	
+	
+<mapper namespace="com.web.epictrip.dao.Mypage_Dao">
+	<select id="Mypage_level" resultType="level" parameterType="String">
+		SELECT g.GRADE_NAME, g.GRADE_IMG,
+		       (SELECT COUNT(*) FROM levels WHERE userid = #{userid} AND checklev = 1) -
+		       (SELECT COUNT(*) FROM levels WHERE userid = #{userid} AND checklev = 2) AS cnt
+		FROM grade g
+		WHERE (SELECT COUNT(*) FROM levels WHERE userid = #{userid} AND checklev = 1) -
+		      (SELECT COUNT(*) FROM levels WHERE userid = #{userid} AND checklev = 2) 
+      BETWEEN g.GRADE_MIN AND g.GRADE_MAX
+	</select>
+	
+	<!-- 테이블에 있는지 여부 -->
+	<select id="levelCheck02"  parameterType="string" resultType="int">
+		SELECT count(*) AS cnt FROM levels WHERE userid = #{userid} AND recommendid = #{recommendid}
+	</select>
+	
+	<!-- 테이블에 있으면 추천인지 비추인지 여부 -->
+	<select id="levelCheck" parameterType="string" resultType="int">
+		SELECT checklev FROM levels WHERE userid = #{userid} AND recommendid = #{recommendid}
+	</select>
+	
+	<!-- 0:0 일때 인서트 -->
+	<insert id="levelCheckInsert" parameterType="level">
+		INSERT INTO levels VALUES ('lev_'||level_seq.nextval,#{userid},#{recommendid},sysdate,#{checklev})
+	</insert>
+	
+	<!-- 0:1 && 1:0 일때 업데이트 -->
+	<update id="levelCheckUpt" parameterType="level">
+		UPDATE levels SET checklev = #{checklev} WHERE userid = #{userid} AND recommendid = #{recommendid}
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="levelCheckDel" parameterType="level">
+		DELETE FROM levels WHERE userid = #{userid} AND recommendid = #{recommendid}
+	</delete>
+	
+    <select id="getPurchaseHistory" resultType="payment2" parameterType="String">
+        SELECT TITLEIMAGE, PRODTITLE, COUNTRY, TOTPRICE, paydate, d.PRODKEY
+        FROM payment p, product d
+        WHERE p.prodkey = d.PRODKEY AND userid=#{userid}
+        ORDER BY paydate desc
+    </select>
+
+    <select id="getUserReviews" resultType="review" parameterType="String">
+        SELECT PRODTITLE, COMMENTS, UPLOADDATE,c.PRODKEY 
+        FROM PRODCOMMENT c, product d
+        WHERE c.PRODKEY = d.PRODKEY AND userid=#{userid}
+        ORDER BY UPLOADDATE desc
+    </select>
+
+    <select id="getUserCompanions" resultType="companion" parameterType="String">
+        SELECT IMAGE,NAME,BIRTH,GENDER,CPIMAGE,STARTDATE,ENDDATE,CPTITLE,CPNUM,HITS,CURRENTNUM, cpkey
+        FROM COMPANY c , USERINFO u 
+        WHERE c.USERID = u.USERID AND c.USERID = #{userid}
+        ORDER BY CREATDATE DESC
+    </select>
+
+    <select id="getUserSchedules" resultType="schedule" parameterType="String">
+        SELECT IMAGE, NAME, STARTDATE, ENDDATE, LOC,SCHEDULE_KEY
+        FROM SCHEDULE s, USERINFO u 
+        WHERE s.USERID = u.USERID AND s.USERID = #{userid}
+        ORDER BY CREATDATE DESC
+    </select>
+
+    <select id="getUserWishlist" resultType="wishlist" parameterType="String">
+        SELECT TITLEIMAGE, PRODTITLE, PRODLOC, PRICE, p.PRODKEY
+        FROM WISHLIST w, PRODUCT p 
+        WHERE w.PRODKEY = p.PRODKEY AND userid = #{userid}
+        ORDER BY WLDATE DESC
+    </select>
+    <select id="getUserById" resultType="user" parameterType="String">
+		SELECT * FROM USERINFO u
+		WHERE userid = #{userid}
+    </select>
+    
+    <insert id="updateIntroduce">
+	    UPDATE USERINFO 
+		SET userintroduce = #{userintroduce}
+		WHERE userid = #{userid}
+    </insert>
+    <insert id="changePassword">
+	    UPDATE USERINFO 
+		SET pass = #{newpass}
+		WHERE userid = #{userid}
+		AND pass = #{pass}
+    </insert>
+    <insert id="withdrawAccount">
+	    UPDATE USERINFO 
+		SET AUTH = 'withdrawal'
+		WHERE userid = #{userid}
+    </insert>
+    <insert id="updateImage">
+		UPDATE USERINFO 
+		SET image = #{image}
+		WHERE userid = #{userid}
+    </insert>
+    
+    
+    
+    
+    
+    
+    
+</mapper>

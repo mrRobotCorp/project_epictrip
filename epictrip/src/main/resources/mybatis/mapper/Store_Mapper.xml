@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >	
+<mapper namespace="com.web.epictrip.dao.Store_Dao">
+
+	<!-- 상품 등록 -->
+	<insert id="Store_Prod_Insert" parameterType="product">
+	    INSERT INTO product (prodkey, prodloc, dcday, dcprice, price, prodtitle, prodcontent, titleimage, detailimage, hits, startdate, enddate, updtdate, creatdate, writer,country)
+	    VALUES ('prod_' || prod_seq.nextval, #{prodloc}, #{dcday}, #{dcprice}, #{price}, #{prodtitle}, #{prodcontent}, #{titleimage}, #{detailimage}, 0, #{startdate}, #{enddate}, sysdate, sysdate,#{writer},#{country})
+	</insert>
+
+
+	<!-- 상품 리스트 페이징처리 -->
+	<select id="Store_Prod_Main_Cnt" resultType="int" parameterType="product_page">
+    	select count(*)
+    	from product
+    	where 1=1
+    	and country = #{country}
+        <choose>			        
+	       	<!-- keyword에 ""이 아닐 때 (타이틀 검색) -->
+	        <when test="keyword neq ''"> 
+		        and prodtitle like '%'|| lower(#{keyword}) ||'%'
+	   			order by updtdate desc
+	        </when>
+	       	<!-- searchType와 keyword가 공백이 아닐때 (타이틀검색 + 조회순) -->
+	        <when test="searchType neq '' and keyword neq ''">
+	        	and prodtitle like '%'|| lower(#{keyword}) ||'%'
+		        order by hits desc
+	        </when>
+	       	<!-- searchType가 공백이 아닐때 (조회순) -->
+	        <when test="searchType neq ''">
+		        order by hits desc
+	        </when>
+	       	<!-- 모두해당하지 않을때 업데이트 순 -->
+           	<otherwise>
+	     		order by updtdate desc
+	    	</otherwise>
+    	</choose>
+	</select>
+	
+	<!-- 상품 리스트 페이징처리 후 출력 -->
+	<select id="Store_Prod_Main_List" resultType="product_list" parameterType="product_page">
+		select *
+		from(
+		    select rownum as rnum, 
+			prodkey, prodloc, country, price, prodtitle, titleimage, hits, updtdate, startdate, enddate
+		    from
+		    (
+		        select *
+		        from product
+		        where 1=1
+		        and country = #{country}
+			        <choose>			        
+			        	<!-- keyword에 ""이 아닐 때 (타이틀 검색) -->
+				        <when test="keyword neq ''"> 
+					        and prodtitle like '%'|| lower(#{keyword}) ||'%'
+			    			order by updtdate desc
+				        </when>
+			        	<!-- searchType와 keyword가 공백이 아닐때 (타이틀검색 + 조회순) -->
+				        <when test="searchType neq '' and keyword neq ''">
+				        	and prodtitle like '%'|| lower(#{keyword}) ||'%'
+					        order by hits desc
+				        </when>
+			        	<!-- searchType가 공백이 아닐때 (조회순) -->
+				        <when test="searchType neq ''">
+					        order by hits desc
+				        </when>
+			        	<!-- 모두해당하지 않을때 업데이트 순 -->
+		             	<otherwise>
+				     		order by updtdate desc
+				    	</otherwise>
+			        </choose>
+			    ) t
+			    where rownum <![CDATA[<=]]> #{startList} + #{sizePerPage}
+			)
+		where rnum <![CDATA[>=]]> #{startList}
+	</select>
+
+	<!-- 상품메인 상품갯수 출력 -->
+	<select id="store_Main_Num" resultType="int" parameterType="string">
+	    SELECT COUNT(*) AS count
+	    FROM product
+	    WHERE country = #{value}
+	</select>
+
+	<!-- 상품 디테일 -->
+	<select id="Store_Detail" resultType="product" parameterType="string">
+		SELECT prodkey, prodloc ,dcday ,dcprice ,price , prodtitle , prodcontent ,titleimage ,detailimage , hits , startdate , enddate , updtdate , writer , country 
+		FROM product WHERE prodkey = #{prodkey}
+	</select>
+
+	<!-- 상품 디테일 조회수Up -->
+	<update id="Store_Detail_HitsUp" parameterType="comment_page">
+		UPDATE product SET hits = hits+1 WHERE prodkey= #{prodkey}
+	</update>
+
+	<!-- 상품 댓글 갯수 -->
+	<select id="Store_Detail_Comment_cnt" resultType="int" parameterType="comment_page">
+		select count(*)
+		FROM Prodcomment pc
+		JOIN Userinfo u ON pc.userid = u.userid
+		where 1=1
+		and pc.prodkey = #{prodkey}
+		order by updatedate desc
+	</select>
+	
+	<!-- 상품 댓글 출력 -->
+	<select id="Store_Detail_Comment_list" resultType="comment_info" parameterType="comment_page">
+		SELECT *
+		FROM (
+		    SELECT rownum as rnum, 
+		           commentkey, prodkey, userid, comments, updatedate, name, auth, image
+		    FROM (
+		        SELECT pc.commentkey, pc.prodkey, pc.userid, pc.comments, pc.updatedate, u.name, u.auth, u.image
+		        FROM Prodcomment pc
+		        JOIN Userinfo u ON pc.userid = u.userid
+		        where 1=1
+		        and pc.prodkey = #{prodkey}
+		        order by updatedate desc
+		    ) t
+			    where rownum <![CDATA[<=]]> #{startList} + #{sizePerPage}
+			)
+		where rnum <![CDATA[>=]]> #{startList}
+	</select>
+	
+	<!-- 상품 댓글 입력 -->
+	<insert id="Store_Detail_Comment_Insert" parameterType="comment_info">
+		INSERT INTO Prodcomment (commentkey,prodkey,userid,comments,uploaddate,updatedate)
+		values('pct_'||pct_seq.nextval,#{prodkey},#{userid},#{comments},sysdate,sysdate)
+	</insert>
+
+<!-- 삭제 -->
+	<!-- 상품 삭제 -->
+	<delete id="Store_Del"  parameterType="product">
+		DELETE FROM product WHERE prodkey = #{prodkey}
+	</delete>
+	<delete id="Store_comment_Del"  parameterType="product">
+		DELETE FROM prodcomment WHERE prodkey = #{prodkey}
+	</delete>
+	
+	<!-- 상품 댓글 삭제 -->
+	<delete id="Store_comment_Del2"  parameterType="comment_info">
+		DELETE FROM prodcomment WHERE prodkey = #{prodkey} and commentkey = #{commentkey}
+	</delete>
+<!-- 삭제 -->
+
+<!-- 수정 -->
+	<!-- 상품 수정 조회 -->
+	<select id="Store_Posting_uptsle" parameterType="product" resultType="product">
+		SELECT * FROM product WHERE prodkey = #{prodkey}
+	</select>
+
+	<!-- 상품 수정 인서트 -->
+	<insert id="Store_Posting_upt" parameterType="product">
+		UPDATE product SET
+			prodloc = #{prodloc},
+			dcday = #{dcday},
+			dcprice = #{dcprice},
+			price = #{price},
+			prodtitle = #{prodtitle},
+			prodcontent = #{prodcontent},
+			titleimage = #{titleimage},
+			detailimage = #{detailimage},
+			startdate = #{startdate},
+			enddate = #{enddate},
+			updtdate = sysdate,
+			country = #{country}
+		WHERE prodkey = #{prodkey}
+	</insert>
+<!-- 수정 -->
+
+<!-- 상품 결제 -->
+	<!-- 결제 정보sel -->
+	<select id="Store_Pay_sel">
+		SELECT name,gender,birth,point,phnumber FROM userinfo WHERE userid = #{userid}
+	</select>
+	
+	<!-- 결제 실행 -->
+	<insert id="Store_Pay_insert" parameterType="payment">
+		INSERT INTO payment (paykey,userid, prodkey, savedpoint,totprice, paymethod, paydate,usepoint,choiceDate, people)
+		values('pay_' || pay_seq.nextval, #{userid},#{prodkey},#{savedpoint},#{totprice},#{paymethod},sysdate,#{usepoint},#{choiceDate},#{people})
+	</insert>
+	
+	<!-- 포인트 -->
+	<update id="Store_Pay_Point" parameterType="payment">
+		UPDATE userinfo SET point = point + (#{poinsSum}) WHERE userid = #{userid}
+	</update>
+<!-- 상품 결제 -->
+
+<!-- 위시리스트 insert -->
+	<insert id="Wishlist_Inset" parameterType="string">
+		INSERT INTO Wishlist VALUES ('wish_'||wish_seq.nextval,#{userid},#{prodkey},sysdate)
+	</insert>
+	
+</mapper>

@@ -1,0 +1,204 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    font-family: pMedium;
+    line-height: 1;
+    word-break: keep-all;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+input,
+button,
+textarea {
+    border: none;
+    outline: none;
+}
+
+.blind {
+    display: none !important;
+}
+
+/* ------------- 이외 공통 속성  ------------------ */
+:root {
+    --color-main: #8242F0;
+    --color-sub: #43FF3B;
+    --yellow: #FFD538;
+    --dark-yellow: #EFC22F;
+    --color-line: #c9c9c9;
+}
+
+::selection {
+    background-color: #b3b3b3;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border: 3px solid #fff;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+
+/* ------------------  font ------------------------ */
+@font-face {
+    font-family: pLight;
+    src: url(../source/font/Pretendard-Light.otf);
+}
+
+@font-face {
+    font-family: pRegular;
+    src: url(../source/font/Pretendard-Regular.otf);
+}
+
+@font-face {
+    font-family: pMedium;
+    src: url(../source/font/Pretendard-Medium.otf);
+}
+
+@font-face {
+    font-family: pSemi;
+    src: url(../source/font/Pretendard-SemiBold.otf);
+}
+
+@font-face {
+    font-family: pBold;
+    src: url(../source/font/Pretendard-ExtraBold.otf);
+}
+
+@font-face {
+    font-family: pBlack;
+    src: url(../source/font/Pretendard-Black.otf);
+}

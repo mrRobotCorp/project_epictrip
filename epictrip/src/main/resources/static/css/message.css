@@ -1,0 +1,163 @@
+section { min-height: calc(100vh - 240px); margin-top: 150px; margin-bottom: 120px; padding: 0 15%;}
+/* .chatMemList{position: relative;} */
+.chatMemList p{font-family: pSemi; font-size: 20px;}
+.memPro{margin-top: 30px; display: flex;}
+.member{display: flex; flex-direction: column; align-items: center; margin-right: 25px;}
+.member img{width: 90px; border-radius: 100%;}
+.member span{margin-top: 10px;}
+.member p{font-size: 14px; color: rgb(55, 190, 55); margin-top: 5px;}
+.member button{background-color: white; padding: 0; cursor: pointer; border-radius: 100%;}
+.groupon{height: 20px;}
+
+.memandselmem{  position: relative;display: flex; align-items: center; justify-content: space-between;}
+.selgroupMem{padding: 20px 15px; background-color: #eff8ff; border-radius: 10px;position: relative;cursor: pointer;}
+.selMbtn{ background-color: #eff8ff;font-family: pMedium;   cursor: pointer; 
+font-size: 15px; display: flex; justify-content: center;}
+.selgroupMem img{width: 20px; margin-right: 10px;}
+
+/* === 멤버 확정 모달창 === */
+.selmModal{position: absolute; width: 330px; z-index: 50; background-color: white; left: -143%; top: 120%; padding: 20px; border-radius: 10px;
+box-shadow: 1px 1px 7px #8585856b; display: none;}
+.selmModal span{font-family: pLight; font-size: 13px; color: #808080;}
+.modalname{display: flex; justify-content: space-between;}
+.modalname h1{font-size: 20px;}
+.modalname button{width:16px; height: 16px; background: url(../source/mesCancel.png) no-repeat center center; background-size: cover;
+transition: all .2s; cursor: pointer;}
+.modalname button:hover{background: url(../source/mesCancel2.png) no-repeat center center; background-size: cover;}
+
+.warnmsg{width: 90%; border-radius: 10px; background-color: #f9f9f9; margin: 25px auto;}
+.warnmsg p{font-family: pLight; font-size: 15px; text-align: center; padding: 20px;}
+
+.selecmems{margin-top: 25px; display: flex; justify-content: space-between; align-items: center; height: 66px;}
+.memsimgname{display: flex;-webkit-box-align: center; align-items: center; gap: 5px;}
+.memsimgname img{width: 55px; border-radius: 100%;}
+.memsimgname span{font-family: pMedium; font-size: 16px; color: #000000;}
+
+.groupToggle{padding: 7px 12px; border-radius: 5px;background-color: rgba(162, 255, 162, 0.72); color: green; font-family: pMedium;
+font-size: 15px; cursor: pointer;}
+.groupToggle.cancel{background-color: rgba(255, 168, 168, 0.697);color: red;}
+
+.selchat{display: flex; width: 100%; justify-content: space-between; margin-top: 20px;}
+.selchat button{width: 80px; height: 45px; background-color: white; border: solid 1px var(--color-line);
+border-radius: 10px; font-family: pSemi; font-size: 16px;}
+.selchat button:hover{border: solid 1px var(--color-main); transition: all .3s;}
+.selchat a button.selected{background-color: var(--color-main); border: solid 1px var(--color-main); color: white;}
+.ms{margin-right: 10px;}
+
+/* ==== 메세지 입력 창 ==== */
+.chatBoard{width: 68%;}
+.chatWrap{height: 600px;border: solid 1px var(--color-line); border-radius: 10px; padding-bottom: 30px; overflow: hidden;}
+.chatInner{width: 100%; margin: 0 auto;height: 534px;padding-bottom: 30px;
+overflow-y: scroll; overflow-x: hidden; -ms-overflow-style: none; position: relative;}
+.chatInner::-webkit-scrollbar {width: 10px;}
+.chatInner::-webkit-scrollbar-thumb {height: 5px; background: rgb(209, 209, 209); border-radius: 10px;}
+    
+
+.sendMs{width: 68%; height: 55px; border: solid 1px var(--color-line); margin-top: 15px; border-radius: 10px; display: flex; align-items: center;}
+.msArea {margin: 0 0 0 10px;  resize: none; overflow: hidden; width: 90%; height: 20px;max-height: 60px;padding: 12px 40px 10px 13px;
+border: 0px; font-family: pMedium; font-size: 15px; color: #222;}
+.sendBtn{background: url(../source/iconSend.png) center center; background-size: cover; background-repeat: no-repeat; width: 35px; height: 35px; background-color: white; margin-left: 10px; cursor: pointer; margin-right: 10px;}
+.sendBtn.send{background: url(../source/iconSendOk.png) center center; background-size: cover; background-repeat: no-repeat; width: 35px; height: 35px; background-color: white; margin-left: 10px; cursor: pointer; transition: all.3s;}
+.sendflex{display: flex; justify-content: space-between; margin-top: -73px;}
+
+/* ================ 채팅 ==================== */
+/* ======== 채팅 시작 날짜 / 들어온 사람 알려주는 css =========== */
+.ment{display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; width: 40%; padding: 14px 0px;
+text-align: center; margin: 0 auto;}
+.mentp{width: 80%; min-width: 174px; padding: 4px 14px; font-size: 13px; line-height: 19px; color: rgb(106, 106, 106); background-color: rgb(243, 246, 245);
+border-radius: 12px;}
+/* ======= 상대방 채팅css ======== */
+.ansarea{display: flex; gap: 7px; -webkit-box-pack: start; justify-content: flex-start; padding: 14px 18px 0;}
+.ansprof img{width: 61px; border-radius: 100%;}
+.ansInner {width: fit-content; min-width: 30px; max-width: 300px; padding: 10px 20px; margin-top: 10px; font-size: 15px; 
+line-height: 22px; color: #222; text-align: start; background-color: rgb(245, 245, 245); border-radius: 10px; outline: none;}
+/* ==== 관리자 이미지 ====== */
+
+/* ======= 채팅 공통 부분 =========== */
+.chatCom{position: relative; display: flex; flex-direction: column; order: 2;}
+.sendDate{align-self: flex-end; order: 3; font-size: 12px;font-weight: 400; line-height: 18px; color: rgb(154, 154, 154);}
+/* ========= 본인 채팅css =========== */
+.mychat {display: flex; gap: 7px; padding: 14px 18px 0px; -webkit-box-pack: end; justify-content: flex-end;}
+.mychatBlank{ position: relative; width: 42px; height: 42px;}
+.mychatInner {width: fit-content; min-width: 30px; max-width: 300px; padding: 10px 15px; font-size: 15px; line-height: 22px; 
+text-align: start; border: 0px;  border-radius: 10px; outline: none; margin-right: 7px; background-color: var(--yellow); color: #222;}
+.bupIqN {align-self: flex-end; font-size: 12px; font-weight: 400; line-height: 18px; color: rgb(154, 154, 154); order: 1; border: solid 1px red;}
+.mychatTime{align-self: flex-end;}
+
+/* ======== 채팅 총 묶음 ====== */
+.chatandlist{display: flex; justify-content: space-between; margin-top: 25px;}
+/* ======== 채팅 방 목록 =========== */
+.chatList{width: 30%; height: 670px; border: solid 1px var(--color-line); border-radius: 10px; padding-bottom: 30px; overflow: hidden ;
+}
+.chatListinin{height: 600px;}
+.chatListinin::-webkit-scrollbar {width: 10px;}
+.chatListinin::-webkit-scrollbar-thumb {height: 5px; background: rgb(209, 209, 209); border-radius: 10px;}
+.chatListinin{overflow-y: scroll; overflow-x: hidden; -ms-overflow-style: none;}
+.chatListInner{padding: 10px 10px 5px 10px;}
+.chatListInner h3{padding: 15px 0 20px 10px; margin-bottom: 20px; font-size: 18px; width: 97%; border-bottom: solid 1px var(--color-line);}
+.chatroom{transition: all 180ms ease 0s; cursor: pointer; display: flex; background: rgb(255, 255, 255); padding: 10px 10px 10px 10px;}
+.chatroom:hover{background-color: #eeececb8; border-radius: 5px;}
+.chatroom img{width: 62px; height: 62px; border-radius: 100%; margin-right: 20px;}
+.roominfo{width: 80%;}
+.roomtitle{display: flex; margin-top: 10px;}
+.roomtitle p{font-size: 15px;line-height: 130%; overflow: hidden; display: -webkit-box;
+-webkit-line-clamp: 2;  -webkit-box-orient: vertical; text-overflow: ellipsis; }
+.roomtitle span{margin-left: 10px; color: var(--color-line);}
+.lastMsg{font-family: pLight; font-size: 15px; color: rgb(143, 143, 143); margin-top: 8px; white-space: nowrap;
+overflow: hidden; text-overflow: ellipsis; width: 250px;}
+.listmsgtime{display: flex; justify-content: space-between; margin-top: 15px;}
+.listmsgtime span{font-family: pLight; font-size: 14px; color: rgb(143, 143, 143);}
+
+.chatroomname { position: sticky; display: flex; align-items: center; justify-content: space-between; top: 0; background-color: white; border-bottom: solid 1px var(--color-line); margin: 0 auto; 
+padding: 23px 10px 23px 20px; display: flex; align-items: center; box-shadow: 0 2px 5px #a9a9a95c; }
+.chatroomname span:first-child { font-size: 18px; margin-right: 10px; } 
+.chatroomname span:last-child { color: rgb(143, 143, 143); } 
+.chatroomname button { padding: 7px 12px; margin-right: 10px; background: #e7e7e7; border-radius: 10px; font-family: pMedium; cursor: pointer; transition: all .2s; }
+.chatroomname button:hover { background: #cfcfcf; } 
+
+/* === 멤버 모달창 === */
+.memMpModal{position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 100; display:none; -webkit-box-align:center; align-items: center; 
+-webkit-box-pack: center;justify-content: center;box-sizing: border-box;background: rgba(25, 25, 25, 0.5);padding: 34px 0px;opacity: 1;transition: opacity 0.6s ease 0s;}
+.memMp{width: 500px;box-sizing: border-box; padding: 20px; background-color: white; border-radius: 10px;}
+.memMpclose{display: flex; justify-content: space-between;}
+.memMpclose button{width:20px; height: 20px; background: url(../source/mesCancel.png) no-repeat center center; background-size: cover;
+transition: all .2s; cursor: pointer; background-color: white;}
+.memMpclose button:hover{background: url(../source/mesCancel2.png) no-repeat center center; background-size: cover;}
+
+.memMpInner{width: 90%; margin: 30px auto 40px; display: flex; flex-direction: column; align-items: center;}
+.memIninfo{display: flex; flex-direction: column; align-items: center;}
+.memimgLv{position: relative; display: flex;}
+.profile{width: 90px; border-radius: 100%;}
+.level{position: absolute; width: 40px; left: 70%; top: 60%;}
+.lvandN{margin-top: 15px; display: flex; flex-direction: column; align-items: center;}
+.memMoidname {display: flex; align-items: center; margin-top: 15px;  background-color: #a7a7a74b; padding: 10px 15px 10px 15px;border-radius: 5px; }
+.memMoname span {font-size: 18px; } 
+.memMoid span{color: #5f5f5f; margin-left: 4px; font-size: 13px;}
+
+
+.myintroduce{width: 100%; margin-top: 15px;}
+.myintroduce p{font-size: 15px; color: #717171;}
+.myintroin{margin-top: 10px; padding: 15px; background-color: #E9E9E9; border: solid 1px var(--color-line); line-height: 150%; border-radius: 5px; color: #3f3f3f;}
+
+.subgb{width: 100%; display: flex; justify-content: space-between; margin-top: 20px;}
+.ageGen{display: flex;}
+.mybirth p{margin-bottom: 20px; font-size: 15px; font-family: pSemi; color: #717171;}
+.mybirth span{background-color: #E9E9E9; border: solid 1px var(--color-line); padding: 9px 155px 9px 10px; border-radius: 5px; margin-right: 20px; color: #878787;}
+.mygen p{margin-bottom: 20px; font-size: 15px; font-family: pSemi; color: #717171;}
+.mygen span{background-color: #E9E9E9; border: solid 1px var(--color-line); padding: 9px 155px 9px 10px; border-radius: 5px; color: #878787;}
+
+.recoBtn{border: solid 1px var(--color-line); margin-top: 15px; padding: 5px 0; border-radius: 50px; width: 120px; display: flex; justify-content: center;}
+.reconBtnline{border-right: solid 1px var(--color-line); margin: 0 15px;}
+.goodMem{background: url(../source/thumbsUp.png) center center no-repeat; background-size: cover; width: 25px; height: 25px; cursor: pointer;}
+.badMem{background: url(../source/thumbsUp.png) center center no-repeat; background-size: cover; transform: rotate(180deg); width: 25px; height: 25px; cursor: pointer;}
+.goodMem.choice{background: url(../source/thumbsUpcol.png) center center no-repeat; background-size: cover;}
+.badMem.choiceB{background: url(../source/thumbsUpcol.png) center center no-repeat; background-size: cover; transform: rotate(180deg);}
+
+.memberModalBtn{cursor: pointer;}
+
+
+
+
+
+
+

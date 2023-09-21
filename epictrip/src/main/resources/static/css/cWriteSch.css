@@ -1,0 +1,126 @@
+section { min-height: calc(100vh - 240px); padding: 0 12%; margin-top: 200px; } 
+
+.selecAll { padding: 20px; border: 1px solid #ddd; border-radius: 10px; } 
+
+.opLine { display: flex; align-items: center; } 
+.opLine span { display: flex; align-items: center; justify-content: center; width: 260px; height: 60px; margin-right: calc(100vw * 45 / 1920);  background: #eee; font-size: 15px; font-family: pBold; } 
+.schFrm input[type="radio"] { display: none; } 
+.schFrm input[type="radio"] + label { padding: 7px 16px;  margin-right: calc(100vw * 13 /1920); border-radius: 20px; font-size: 15px; font-family: pRegular; cursor: pointer; transition: all .2s; } 
+.schFrm input[type="radio"]:checked + label { background: #41ff3b5a; } 
+
+.dateSelec { margin-top: 15px; display: flex; align-items: center; } 
+.dateSelec span { display: flex; align-items: center; justify-content: center; width: 260px; height: 50px; margin-right: 40px; background: #fff; border: 1px solid var(--color-line); background: #fff; border-radius: 5px; font-size: 15px; font-family: pBold; cursor: pointer; transition: all .25s;} 
+.dateSelec #dateClick:hover { background: #eee;}
+
+.dateSelec .dateInput { display: flex; align-items: center; justify-content: space-around; } 
+.dateSelec .dpDiv { position: relative; display: flex; align-items: center; width: 300px; height: 45px; padding-left: 60px; margin-right: 30px; border: 1px solid #ddd; border-radius: 5px; transition: all .2s; } 
+.dateSelec .dpDiv::before { content: ''; position: absolute; top: 27%; left: 7%; width: 20px; height: 20px; background: url(../source/dateGr.png) center center; background-size: cover; } 
+.dateSelec .dpDiv:focus-within { border-color: #2ce126; } 
+.dpDiv .datePick { width: 100%; font-size: 14px; font-family: pRegular; } 
+
+/* ----------- date custom --------------*/
+
+.ui-datepicker { top: 712px !important; width: 250px !important; } 
+.ui-widget.ui-widget-content { /* 전체 박스 */
+border:0px; box-shadow: 2px 2px 8px #a4a4a44b; padding:0; border-radius: 10px; } 
+.ui-widget-header { /* 헤더 (화살표/날짜표시 영역) */ font-size: 15px; border: 0px; border-radius: 0px; } 
+.ui-widget-header .ui-icon { /* 이전,다음 화살표 */
+background: none; } 
+.ui-datepicker-prev span { display: none !important; } 
+.ui-datepicker-next span { display: none !important; } 
+.ui-datepicker-prev { /* 이전 화살표 */
+width: 23px !important; height: 23px !important; border-radius: 50% !important; text-align:center; line-height: 1.5em; cursor: pointer; } 
+.ui-datepicker-prev::before { content:'\02C2'; } 
+.ui-datepicker-next { /* 다음 화살표 */
+width: 23px !important; height: 23px !important; border-radius: 50% !important; text-align:center; line-height: 1.5em; cursor: pointer; } 
+.ui-datepicker-next::before { content:'\02C3'; } 
+
+.ui-datepicker .ui-datepicker-header { background: #fff; border-radius: 10px 10px 0 0; } 
+.ui-datepicker .ui-datepicker-title { color: var(--color-main); } 
+.ui-datepicker .ui-datepicker-title .ui-datepicker-year { width: 70px; font-family: pRegular; } 
+.ui-datepicker .ui-datepicker-title .ui-datepicker-month { width: 70px; font-family: pRegular; } 
+.ui-datepicker th { /* 요일 영역 */ background : #955ef5; } 
+.ui-datepicker th span { /* 요일 텍스트 */ font-size:14px; color: #fff; font-family: pRegular; } 
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active { /* 일자 기본영역 */
+border:0px; background: none; font-family: pLight; font-size: 13px; text-align: center; width: 22px; height: 22px; line-height: 22px; padding:0; border-radius: 3px; margin: 0 auto; } 
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight { /* 오늘일자 */
+border:0px; background:var(--yellow) !important; color: #000 !important; } 
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover { /* 선택 일자 */
+border: 1px solid var(--color-main) !important; background: var(--color-main) !important; } 
+/*-------------------------------------------------*/
+
+
+.detailWrite { margin: 30px 0 70px 0; } 
+
+.mapInfoAll { display: flex; align-items: center; justify-content: space-between; } 
+
+.schMap { width: calc(100vw * 580 / 1920); height: calc(100vw * 900 / 1920); border-radius: 10px; border: 2px solid #ddd; } 
+.schInfo { display: flex; align-items: center; flex-direction: column; justify-content: flex-start; width: calc(100vw * 750 / 1920); height: calc(100vw * 840 / 1920); border-radius: 10px; padding: 30px; border: 1px solid #ddd; } 
+
+.infoTitle { width: 100%; margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between; font-size: 17px; font-family: pSemi; } 
+.infoTitle .btn { opacity: .5; cursor: pointer; transition: all .2s; } 
+.infoTitle .btn:hover { opacity: 1; } 
+.infoTitle .backBtn { width: 18px; height: 18px; background: url(../source/arrow_l.png) center center; background-size: cover; } 
+
+.schInfo .schDays { width: 100%; height: 65px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; color: #000000d1; background: #8242f024; border-radius: 10px; font-family: pRegular; font-size: 18px; letter-spacing: 1px; } 
+
+.schInfo .schLoc { width: 100%; position: relative; margin: 0 0 40px 100px; font-size: 17px; } 
+.schInfo .schLoc::before { position: absolute; top: -15%; left: -5%; content: ''; background: url(../source/loc.png) center center; background-size: cover; width: 23px; height: 23px; } 
+
+.daySch { width: 100%; height: 690px; padding-top: 10px; overflow-y: scroll; } 
+.daySch::-webkit-scrollbar { width: 7px; } 
+.daySch::-webkit-scrollbar-thumb { background-color: #cecece; border: 3px solid transparent; border-radius: 20px; } 
+.daySch::-webkit-scrollbar-track { background-color: transparent; } 
+
+.daySch .dNum { padding: 6px 15px; margin-right: 10px; background: var(--yellow); color: #333; border-radius: 15px; } 
+.daySch .date { padding: 5px 15px; border-left: 1px solid var(--color-line); color: #555; font-size: 14px; } 
+
+.dayOne { margin-bottom: 50px; } 
+.dayTxt { margin: 0 0 30px 20px; display: flex; align-items: center; justify-content: space-between;} 
+.dayOne .locAdd { margin-right: 10px; padding: 10px 15px; border-radius: 10px; background: #e8e8e8; font-size: 15px; font-family: pRegular; transition: all .2s; cursor: pointer; } 
+.locAdd:hover { background: #ffd4389f; } 
+
+.daySch .schMemo { margin: 0 calc(100vw * 10 / 1920) 20px calc(100vw * 30 / 1920); display: flex; align-items: center; justify-content: space-around; } 
+.daySch .schMemo .memoCnt { margin-right: 13px; display: flex; align-items: center; justify-content: center; width: 23px; height: 23px; background: var(--color-main); color: #fff; font-family: pRegular; font-size: 15px; border-radius: 15px; } 
+.daySch .schMemo .memoTxt { width: 78%; padding: 15px; border: 1px solid var(--color-line); border-radius: 10px; font-family: pRegular; font-size: 15px; } 
+.mNone { color: #888; } 
+
+.locDel { margin-left: 10px; width: 35px; height: 35px; line-height: 15px; color: #333; background: #e8e8e8; font-size: 17px; cursor: pointer; border-radius: 20px; transition: all .25s;}
+.locDel:hover { background: #dcdcdc; }
+
+.submitBtn { display: block; margin: 40px auto 0 auto; width: 20%; padding: 15px 0; background: #e8e8e8; border-radius: 10px; font-size: 17px; font-family: pSemi; transition: all .2s; cursor: pointer;}
+.submitBtn:hover { background: #ffd4389f;}
+
+/* --------------------- modal ---------------------------- */
+.modalBg { visibility: hidden; opacity: 0; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.599); z-index: 100; transition: all .3s ease; } 
+.modalBg.active { visibility: visible; opacity: 1; } 
+.locModal { position: relative; margin: calc(100vw * 200 / 1920) auto; padding: calc(100vw * 60 / 1920); width: calc(100vw * 500/ 1920); height: calc(100vw * 550 / 1920); border: 1px solid #ddd; border-radius: 15px; background-color: #fff; box-shadow: 2px 2px 10px #1818189c; z-index: 1000; } 
+.locModal h4 { text-align: center; font-size: 24px; font-family: pSemi; } 
+
+.schBox { margin: 30px 0 10px 0; display: flex; align-items: center; justify-content: space-between; border-radius: 10px; background: #eee; } 
+.schBox .addLocTxt { width: 90%; height: 50px; padding: 0 20px; background: transparent; font-size: 15px; font-family: pMedium; } 
+.schBox .locSchBtn { margin-right: 20px; width: 25px; height: 25px; background: url(../source/srhIco.png) center center; background-size: cover; cursor: pointer; } 
+
+.locAll { margin: 10px 0; height: calc(100vw * 380 / 1920); overflow: auto; } 
+.locAll::-webkit-scrollbar { width: 12px; } 
+.locAll::-webkit-scrollbar-thumb { background-color: #999; border: 3px solid #fff; border-radius: 20px; } 
+.locAll::-webkit-scrollbar-track { background-color: transparent; }
+
+.locModal input[name="ds"] { display: none; } 
+
+input[name="ds"] + label { width: 100%; position: relative; display: flex; align-items: center; justify-content: center; margin: 22px 0; padding-bottom: 20px; border-bottom: 1px solid var(--color-line); cursor: pointer; } 
+input[name="ds"] + label::before { content: ""; position: absolute; width: calc(100vw * 27 /1920); height: calc(100vw * 27 /1920); top: calc(100vw * 2 / 1920); left: 15px; background: url(../source/loc.png) center center; background-size: cover; } 
+input[name="ds"] + label span { width: 78%; margin-left: calc(100vw * 33/ 1920); font-size: 18px; font-family: pSemi; } 
+input[name="ds"] + label .check { width: 25px; height: 25px; border: 2px solid #ddd; border-radius: 7px; } 
+
+input[name="ds"]:checked + label .check { position: relative; } 
+input[name="ds"]:checked + label .check::after { content: '✓'; color: #fff; background-color: var(--color-main); border: var(--color-main); border-radius: 7px; font-size: 25px; width: 27px; height: 27px; text-align: center; position: absolute; left: -1px; top: -1px; } 
+
+.locModal .addBtn { display: block; margin: 20px auto 0 auto; padding: 8px 15px; border-radius: 10px; font-size: 16px; font-family: pMedium; cursor: pointer; transition: all .3s; } 
+.addBtn:hover { background: #ffd4389f; } 
+
+.cls { position: absolute; padding: 10px; top: 25px; right: 25px; border-radius: 8px; transition: all .3s; cursor: pointer; } 
+.cls:hover { background: #8242f024; } 
+.clsBtn { width: 17px; height: 17px; background: url(../source/closeIco.png) center center; background-size: cover; cursor: pointer; } 
+

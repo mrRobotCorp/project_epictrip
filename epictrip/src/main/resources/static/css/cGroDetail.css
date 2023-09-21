@@ -1,0 +1,94 @@
+section { min-height: calc(100vh - 240px); padding: 0 13%; margin: 200px 0 100px 0; } 
+.postingWrap { display: flex; justify-content: center; } 
+.postingInner { width: 100%; } 
+.postImgCon { width: 100%; height: 450px; margin: 0 auto; border-radius: 15px; overflow: hidden; position: relative; } 
+.postImgCon img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: auto; height: 100%; min-width: 100%; object-fit: cover; border-radius: 15px; } 
+
+.postingBtn { display: flex; align-items: center; justify-content: end; padding-top: 25px; } 
+.postingBtn button { width: 52px; height: 30px; border-radius: 5px; background-color: var(--color-line); font-family: pMedium; font-size: 14px; color: rgb(27, 27, 27); margin-left: 10px; cursor: pointer; } 
+.postingBtn button:hover { background-color: #55ed50aa; transition: all .3s; } 
+
+.postContent { display: flex; margin-top: 25px; justify-content: space-between; } 
+.pLeft { width: 800px; } 
+.pLeft h1 { font-family: pBold; font-size: 25px; } 
+.postInfo { margin-top: 35px; padding: 20px 0px; width: 800px; border: solid 1px var(--color-line); border-radius: 5px; } 
+.postInfo .lmd { display: flex; -webkit-box-align: center; align-items: center; font-family: pMedium; font-size: 17px; } 
+.postInfo .lmd span { margin: 0 0 0 10px; } 
+.postInfo .lmd p { color: rgb(84, 84, 84); padding-left: 20px; } 
+.postInfo .dDetail { display: flex; align-items: center; margin-top: 10px; } 
+.postInfo .dDetail img { width: 18px; margin-bottom: 2px; padding-left: 20px; } 
+.postInfo .dDetail span { padding: 0 0 0 10px; font-family: pLight; font-size: 16px; } 
+
+.postText { margin-top: 31px; font-size: 16px; font-family: pLight; line-height: 1.5em; min-height: 100px; word-break: break-all; } 
+
+.postDV { margin-top: 100px; display: flex; font-family: pLight; font-size: 15px; color: rgb(62, 62, 62); } 
+.postDV span { padding-right: 5px; } 
+.postDV p { padding: 0 5px 0 15px; } 
+
+.pRight { width: 320px; } 
+.wUser { border: solid 1px var(--color-line); width: 100%; border-radius: 10px; } 
+.wUserInner { width: 88%; margin: 20px auto; } 
+.wUserInfo { padding: 10px; display: flex; align-items: center; border-radius: 10px; cursor: pointer; transition: all .25s; } 
+.wUserInfo:hover { background: #eee; }
+.wUserInfo img { width: 53px; border-radius: 100%; } 
+.ngc { display: flex; flex-direction: column; padding-left: 10px; } 
+.ngc p { font-family: pBold; font-size: 18px; } 
+.ag { display: flex; padding-top: 5px; } 
+.ag p { font-family: pMedium; font-size: 15px; color: rgb(43, 43, 43); } 
+.wUserInner button { width: 100%; height: 55px; border-radius: 10px; font-family: pBold; font-size: 16px; background-color: var(--color-main); color: white; margin-top: 23px; cursor: pointer; } 
+
+.joinMem { width: 100%; border: solid 1px var(--color-line); margin-top: 20px; border-radius: 10px; } 
+.jMemInner { width: 85%; margin: 23px auto; } 
+.jMemCnt { display: flex; align-items: center; } 
+.jMemCnt span { padding-left: 10px; font-family: pMedium; font-size: 15px; color: var(--color-main); } 
+.jMemCnt p { font-family: pBold; font-size: 18px; } 
+.memInfoWrap { margin-top: 20px; } 
+.memInfo { display: flex; margin-bottom: 10px; } 
+.memInfo img { width: 53px; border-radius: 100%; } 
+.memNg { display: flex; align-items: center; padding-left: 13px; } 
+.memNg span { padding-right: 5px; } 
+
+/* === 멤버 모달창 === */
+.memMpModal { visibility: hidden; opacity: 0; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 100; -webkit-box-align:center; align-items: center; -webkit-box-pack: center; justify-content: center; box-sizing: border-box; background: rgba(25, 25, 25, 0.5); padding: 34px 0px; transition: all .3s ease; } 
+.memMpModal.active { visibility: visible; opacity: 1; } 
+.memMp { margin: 170px auto 0 auto; width: 500px; box-sizing: border-box; padding: 20px; background-color: white; border-radius: 10px; } 
+.memMpclose { display: flex; justify-content: space-between; } 
+.memMpclose button { width:20px; height: 20px; background: url(../source/mesCancel.png) no-repeat center center; background-size: cover; transition: all .2s; cursor: pointer; background-color: white; } 
+.memMpclose button:hover { background: url(../source/mesCancel2.png) no-repeat center center; background-size: cover; } 
+
+.memMpInner { width: 90%; margin: 30px auto 40px; display: flex; flex-direction: column; align-items: center; } 
+.memIninfo { display: flex; flex-direction: column; align-items: center; } 
+.memimgLv { position: relative; display: flex; } 
+.profile { width: 90px; border-radius: 100%; } 
+.level { position: absolute; width: 40px; left: 70%; top: 60%; } 
+.lvandN{margin-top: 15px; display: flex; flex-direction: column; align-items: center;}
+.memMoidname {display: flex; align-items: center; margin-top: 15px;  background-color: #a7a7a74b; padding: 10px 15px 10px 15px;border-radius: 5px; }
+.memMoname span {font-size: 18px; } 
+.memMoid span{color: #5f5f5f; margin-left: 4px; font-size: 13px;}
+
+
+.myintroduce { width: 100%; margin-top: 15px; } 
+.myintroduce p { font-size: 15px; color: #717171; } 
+.myintroin { margin-top: 10px; padding: 15px; background-color: #E9E9E9; border: solid 1px var(--color-line); line-height: 150%; border-radius: 5px; color: #3f3f3f; } 
+
+.subgb { width: 100%; display: flex; justify-content: space-between; margin-top: 20px; } 
+.ageGen { display: flex; } 
+.mybirth p { margin-bottom: 20px; font-size: 15px; font-family: pSemi; color: #717171; } 
+.mybirth span { background-color: #E9E9E9; border: solid 1px var(--color-line); padding: 9px 155px 9px 10px; border-radius: 5px; margin-right: 20px; color: #878787; } 
+.mygen p { margin-bottom: 20px; font-size: 15px; font-family: pSemi; color: #717171; } 
+.mygen span { background-color: #E9E9E9; border: solid 1px var(--color-line); padding: 9px 155px 9px 10px; border-radius: 5px; color: #878787; } 
+
+.recoBtn { border: solid 1px var(--color-line); margin-top: 15px; padding: 5px 0; border-radius: 50px; width: 120px; display: flex; justify-content: center; } 
+.reconBtnline { border-right: solid 1px var(--color-line); margin: 0 15px; } 
+.goodMem { background: url(../source/thumbsUp.png) center center no-repeat; background-size: cover; width: 25px; height: 25px; cursor: pointer; } 
+.badMem { background: url(../source/thumbsUp.png) center center no-repeat; background-size: cover; transform: rotate(180deg); width: 25px; height: 25px; cursor: pointer; } 
+.goodMem.choice { background: url(../source/thumbsUpcol.png) center center no-repeat; background-size: cover; } 
+.badMem.choiceB { background: url(../source/thumbsUpcol.png) center center no-repeat; background-size: cover; transform: rotate(180deg); } 
+
+.memberModalBtn { cursor: pointer; } 
+
+
+
+
+
+

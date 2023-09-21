@@ -1,0 +1,109 @@
+section { min-height: calc(100vh - 240px); padding: 0 12%; margin-top: 140px; } 
+
+.selecAll { padding: 20px; border: 1px solid #ddd; border-radius: 10px; } 
+
+.opLine { display: flex; align-items: center; } 
+.opLine .options { width: 70%; display: flex; align-items: center; flex-wrap: wrap; }
+.opLine span { display: flex; align-items: center; justify-content: center; width: 260px; height: 60px; margin-right: calc(100vw * 45 / 1920); background: #eee; font-size: 15px; font-family: pBold; } 
+.schFrm input[type="radio"] { display: none; } 
+.schFrm input[type="radio"] + label { padding: 7px 16px; margin-right: calc(100vw * 13 /1920); border-radius: 20px; font-size: 15px; font-family: pRegular; cursor: pointer; transition: all .2s; } 
+.schFrm input[type="radio"]:checked + label { background: #41ff3b5a; } 
+
+.dateSelec { margin-top: 15px; display: flex; align-items: center; } 
+.dateSelec span { display: flex; align-items: center; justify-content: center; width: 260px; height: 50px; margin-right: 40px; background: #fff; border: 1px solid var(--color-line); background: #fff; border-radius: 5px; font-size: 15px; font-family: pBold; cursor: pointer; transition: all .25s;} 
+.dateSelec #dateClick:hover { background: #eee; }
+.dateSelec #dateClick.clicked { background: #eee; }
+
+.dateSelec .dateInput { display: flex; align-items: center; justify-content: space-around; } 
+.dateSelec .dpDiv { position: relative; display: flex; align-items: center; width: 300px; height: 45px; padding-left: 60px; margin-right: 30px; border: 1px solid #ddd; border-radius: 5px; outline: 2px solid transparent; transition: all .2s; } 
+.dateSelec .dpDiv::before { content: ''; position: absolute; top: 27%; left: 7%; width: 20px; height: 20px; background: url(../source/dateGr.png) center center; background-size: cover; } 
+.dateSelec .dpDiv:focus-within { border-color: transparent; outline: 2px solid #2ce126; } 
+.dpDiv .datePick { width: 100%; font-size: 14px; font-family: pRegular; } 
+
+.saleSelec { margin-top: 15px; display: flex; align-items: center; }
+.saleSelec span { display: flex; align-items: center; justify-content: center; width: 260px; height: 50px; margin-right: 40px; background: #fff; border: 1px solid var(--color-line); background: #fff; border-radius: 5px; font-size: 15px; font-family: pBold; cursor: pointer; transition: all .25s;}
+.saleSelec #dcdayBtn:hover { background: #eee; }
+.saleSelec #dcdayBtn.clicked {background: #eee; }
+
+.daySelecAll { width: 525px; display: flex; align-items: center; }
+.saleSelec input[name="saleDay"] { display: none; }
+input[name="saleDay"] + label { padding: 7px 15px; margin-right: 15px; position: relative; border-radius: 15px; cursor: pointer;}
+input[name="saleDay"] + label::before { content: '✓'; color: transparent; position: absolute; left: 10px; top: 7px; }
+input[name="saleDay"]:checked + label { padding-left: 30px; background: #eee;}
+input[name="saleDay"]:checked + label::before { color: #000; }
+
+.saleDrop { width: 200px; background-color: #fff; vertical-align: middle; font-size: 14px; padding: 10px; padding-right: 100px; margin-left: 30px; border-radius: 5px; text-indent: 0.01px; font-family: pRegular; text-overflow: ''; appearance: none; border: 1px solid #ddd; outline: 0; border-radius: 5px; outline: 2px solid transparent; cursor: pointer; transition: all .2s;} 
+.saleDrop:focus { border-color: transparent; outline: 2px solid #2ce126; }
+.saleDrop option { padding: 5px 0;}
+
+/* ----------- date custom --------------*/
+
+.ui-datepicker { top: 650px !important; width: 250px !important; } 
+.ui-widget.ui-widget-content { border:0px; box-shadow: 2px 2px 8px #a4a4a44b; padding:0; border-radius: 10px; } 
+.ui-widget-header { font-size: 15px; border: 0px; border-radius: 0px; } 
+.ui-widget-header .ui-icon { background: none; } 
+.ui-datepicker-prev span { display: none !important; } 
+.ui-datepicker-next span { display: none !important; } 
+.ui-datepicker-prev { width: 23px !important; height: 23px !important; border-radius: 50% !important; text-align:center; line-height: 1.5em; cursor: pointer; } 
+.ui-datepicker-prev::before { content:'\02C2'; } 
+.ui-datepicker-next { width: 23px !important; height: 23px !important; border-radius: 50% !important; text-align:center; line-height: 1.5em; cursor: pointer; } 
+.ui-datepicker-next::before { content:'\02C3'; } 
+
+.ui-datepicker .ui-datepicker-header { background: #fff; border-radius: 10px 10px 0 0; } 
+.ui-datepicker .ui-datepicker-title { color: var(--color-main); } 
+.ui-datepicker .ui-datepicker-title .ui-datepicker-year { width: 70px; font-family: pRegular; } 
+.ui-datepicker .ui-datepicker-title .ui-datepicker-month { width: 70px; font-family: pRegular; } 
+.ui-datepicker th { background : #955ef5; } 
+.ui-datepicker th span { font-size:14px; color: #fff; font-family: pRegular; } 
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active { /* 일자 기본영역 */
+border:0px; background: none; font-family: pLight; font-size: 13px; text-align: center; width: 22px; height: 22px; line-height: 22px; padding:0; border-radius: 3px; margin: 0 auto; } 
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight { /* 오늘일자 */
+border:0px; background:var(--yellow) !important; color: #000 !important; } 
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover { /* 선택 일자 */
+border: 1px solid var(--color-main) !important; background: var(--color-main) !important; } 
+
+/*-------------------------------------------------*/
+
+
+.detailWrite { padding: 25px 30px; margin: 30px 0 40px 0; border: 1px solid #ddd; border-radius: 10px; } 
+
+.imgUpAll { background: #FFF; margin: 1em auto; min-height: 300px;  } 
+.imgUpAll span { display: inline-block; margin: 10px 0 0 5px; color: #333; font-size: 20px; font-family: pBold;}
+#fileInput, #bgInput { display: none; }
+.uploadedBtn { display: none;  margin-left: 10px; padding: 7px 12px; border-radius: 10px; color: #444; background: #e8e8e8; font-size: 15px; font-family: pSemi; transition: all .2s; cursor: pointer;}
+.uploadedBtn.uploaded { display: inline-block;  }
+.uploadedBtn.uploaded:hover { background: #ffd4389f; }
+.wrongTxt { width: 100%; color: #777; font-size: 20px; font-family: pBold; text-align: center;}
+
+.fileLabel { position: relative; padding-top: 40px; display: flex; align-items: center; justify-content: center; background: #00000016; width: 100%; height: 100%; cursor: pointer; opacity: .5; transition: all .2s;} 
+.fileLabel::before { content: ""; position: absolute; top: 38%; left: 48%; width: 64px; height: 64px; background: url(../source/imgIco.png) center center; background-size: cover; opacity: .4; z-index: 1; } 
+.fileLabel:hover { background: #0000002b; opacity: 0.9;}
+
+.imgArea { display: flex; align-items: center; margin: 25px 0;  width: 100%; height: 460px; overflow: hidden; background: #eee; border-radius: 8px; } 
+.bgImg { justify-content: center;}
+.infoImg img { width: 100%; }
+.bgImg img { height: 100%; }
+
+.titleBox span { display: inline-block; margin: 10px 0 0 5px; color: #333; font-size: 20px; font-family: pBold;}
+.titleBox input { margin: 25px 0 20px 0; padding: 10px 15px; width: 97%; border-radius: 8px; border: 1px solid var(--color-line); outline: 2px solid transparent; font-size: 18px; font-family: pMedium; transition: all .2s; }
+.titleBox input:focus { border-color: transparent; outline-color: #2ce126; } 
+
+.contxtAll span { display: inline-block; margin: 10px 0 0 5px; color: #333; font-size: 20px; font-family: pBold;}
+.contextBox { padding: 15px; margin: 25px 0; border: 1px solid var(--color-line); outline: 2px solid transparent; border-radius: 10px; }
+.contextBox textarea { width: 100%; height: 180px;  font-family: pRegular; font-size: 16px; line-height: 140%; resize: none;}
+.contextBox:focus-within { border-color: transparent; outline-color: #2ce126; } 
+
+.infoBottom { display: flex; align-items: center; }
+.infoBottom div { margin-left: 10px; display: flex; align-items: center;}
+.infoBottom div span { margin-right: 30px; font-family: pBold; font-size: 17px;}
+.infoBottom .writer1 { width: 380px; height: 40px; margin-right: 150px; border-radius: 5px; border: 1px solid #ddd; background: #f8f8f8; text-align: center; line-height: 40px;}
+.infoBottom input[name="price"] {  width: 420px; height: 40px; padding: 0 10px; border-radius: 5px; border: 1px solid #ddd; outline: 2px solid transparent; font-size: 15px; font-family: pRegular; transition: all .2s;}
+.infoBottom input[name="price"]:focus { border-color: transparent; outline-color: #2ce126;}
+
+input[name="price"]::-webkit-outer-spin-button,
+input[name="price"]::-webkit-inner-spin-button {appearance: none;}
+
+.submitBtn { display: block; margin: 30px auto 50px auto; width: 20%; padding: 15px 0; background: #e8e8e8; border-radius: 10px; font-size: 17px; font-family: pSemi; transition: all .2s; cursor: pointer; } 
+.submitBtn:hover { background: #ffd4389f; } 
+#charCount { display: inline-block; margin: 10px 0 0 10px; font-size: 13px; font-family: pMedium; color: #999;}

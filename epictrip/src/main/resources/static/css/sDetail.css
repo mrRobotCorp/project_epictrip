@@ -1,0 +1,145 @@
+section { min-height: calc(100vh - 240px); padding: 0 13%; margin: 140px 0 100px 0; } 
+.banner { display: flex; align-items: center; width: 100%; height: 450px; border-radius: 15px; overflow: hidden; } 
+section .bnImg { width: 100%; } 
+
+.postContent { display: flex; margin-top: 25px; justify-content: space-between; } 
+
+.pLeft { width: calc(100vw * 880 / 1920); } 
+.pLeft strong { position: relative; font-family: pSemi; font-size: 25px; } 
+.pLeft .titleBottom { padding: 50px 0 30px 0; display: flex; align-items: center; justify-content: space-between; border-bottom:1px solid var(--color-line); } 
+.postingBtn { display: flex; align-items: center; } 
+.postingBtn .admBtn { margin-right: 10px; width: 52px; height: 30px; border-radius: 5px; background-color: #ddd; font-family: pMedium; font-size: 14px; color: rgb(27, 27, 27); cursor: pointer; transition: all .3s; } 
+.postingBtn .admBtn:hover { background-color: #55ed50aa; } 
+.wishBtn { margin-right: 10px; width: 28px; height: 28px; background: url(../source/like.png) center center; background-size: cover; cursor: pointer; } 
+.wishBtn.active { background: url(../source/like_red.png) center center; background-size: cover; } 
+.itemPrice { color: #222; font-size: 33px; font-family: pBold; } 
+.itemPrice span { font-size: 22px; font-family: pMedium; } 
+
+.postCon { position: relative; width: 100%; padding-bottom: 20px; max-height: 580px; overflow-y: hidden; overflow-x: hidden; }
+.postCon.more { height: auto; max-height: none; }
+.postCon::after { content: ''; position: absolute; width: 115%; height: 40px; bottom: 0; left: -3%; background: #fff; filter: drop-shadow(0px -20px 20px #fff); box-shadow: 0 -20px 20px #fff, 0 -20px 50px #fff, 0 -20px 60px #fff, 0 -20px 80px #fff; }
+.postCon.more::after { display: none; }
+
+.postText { margin: 35px 0; font-size: 17px; font-family: pLight; line-height: 1.5em; min-height: 100px; word-break: break-all; } 
+.postImg { width: 100%; }
+.postMore { margin: 0 auto; padding: 10px 60px; color: var(--color-main); background: #fff; border: 2px solid var(--color-main); font-size: 16px; font-family: pSemi; border-radius: 10px; cursor: pointer; transition: all .2s;}
+.postMore.active { display: none; }
+.postMore:hover { background: #8242f013; }
+
+.postDV { margin: 70px 0 50px 0; padding-bottom: 50px; display: flex; font-family: pLight; font-size: 15px; color: #3e3e3e; border-bottom: 1px solid var(--color-line); } 
+.postDV span { padding-right: 5px; } 
+.postDV p { padding: 0 5px 0 15px; } 
+
+.cmmtFrm { margin-bottom: 40px;}
+.cmmtFrm strong { display: inline-block; margin: 0 0 25px 5px; color: #333; font-size: 23px; font-family: pBold; } 
+.cmmtFrm strong::after { position: absolute; content: ''; width: 27px; height: 27px; background: url(../source/reviewIco.png) center center; background-size: cover; top: -2px; right: -38px; }
+
+.cmmtBox { padding: 18px 0; display: flex; align-items: center; justify-content: space-between; background: #eee; border-radius: 10px; border: 2px solid transparent; transition: all .2s; } 
+.cmmtBox:focus-within { background-color: #fafafa; border-color: var(--color-main); } 
+.cmmtBox textarea { width: 88%; height: 55px; padding: 0 20px; background: transparent; font-size: 15px; font-family: pRegular; resize: none; } 
+.cmmtBox textarea::-webkit-scrollbar { width: 6px; } 
+.cmmtBox textarea::-webkit-scrollbar-thumb { background-color: #999; border: none; } 
+
+.cmmtBox button { margin-right: 30px; width: 20px; height: 20px; background: url(../source/cmmtIco.png) center center; background-size: cover; opacity: .5; transition: all .2s; cursor: pointer; } 
+.cmmtBox button:hover { opacity: 1; } 
+
+.comment { margin: 20px 0; padding-bottom: 17px; display: flex; align-items: flex-start; justify-content: space-between; border-bottom: 1px solid #ddd; } 
+.comment:last-child { border: none; }
+.comment .uInfo { display: flex; align-items: center; width: 100%;} 
+.cmmtUserImg { width: 50px; margin: 0 18px 0 5px; border-radius: 50%; } 
+.cmmtUserTxt { width: 100%;}
+.cmmtUserTxt span:first-child { font-family: pSemi; font-size: 17px; } 
+.cmmtUserTxt span:nth-child(2) { margin-left: 5px; font-family: pRegular; font-size: 14px; color: #999; } 
+.cmmtUserTxt .commDel { padding: 3px 8px; color: #e22309; background: #fff; font-family: pRegular; border-radius: 5px; cursor: pointer; transition: all .2s;}
+.cmmtUserTxt .commDel:hover { background: #eee; }
+.cmmtUserTxt .cmmtCon { padding: 10px 0; font-size: 15px; font-family: pLight; line-height: 120%; } 
+.cmmtDate { width: 20%; color: #777; font-size: 13px; font-family: pLight; float: right;}
+
+
+/* --------------------- */
+.pRight { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; height: fit-content; border-radius: 10px; border: solid 1px var(--color-line); } 
+.rightWrap { width: 340px; padding: 20px; } 
+
+.saleTxt { padding: 25px 0 15px 0; font-size: 18px; font-family: pSemi; }
+.saleInfo { display: flex; align-items: center; flex-direction: column; padding: 10px 0; border-bottom: 1px solid #ddd; border-top: 1px solid #ddd; text-align: center;}
+.saleInfo .sRow { width: 100%; display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-family: pRegular; }
+.saleInfo span { width: 180px; display: inline-block; }
+.saleInfo .sHead { color: #333; font-family: pBold; font-size: 15px; margin-bottom: 10px; }
+.saleInfo .sRow .percent { color: var(--color-main); font-family: pSemi;}
+
+.chTxt { padding: 25px 0 15px 0; font-size: 18px; font-family: pSemi; } 
+.priceCnt { display: flex; align-items: center; justify-content: space-between; padding: 20px 15px; background: #ebe4f8b7; border-radius: 10px; } 
+.priceCnt div:first-child { margin-left: 5px;}
+.priceCnt p:first-child { color: #444; font-size: 14px; }
+.onePrice { margin-top: 5px; font-size: 19px; font-family: pBold;}
+
+.cntCtrl { display: flex; align-items: center; } 
+.cntCtrl .number { width: 25px; font-size: 20px; font-family: pSemi; text-align: center; } 
+.cntCtrl .numBtn { display: inline-block; width: 30px; height: 30px; margin: 0 10px; font-size: 22px; line-height: 27px; color: var(--color-main); background-color: #fff; border-radius: 20px; border: 1px solid var(--color-main); text-align: center; cursor: pointer; transition: all .2s; } 
+.cntCtrl .numBtn:hover { background: #ebe4f8; } 
+
+.payInfo span { color: #777; display: inline-block; padding: 25px 0 8px 0; font-size: 14px; font-family: pSemi; } 
+.payInfo p { color: #888; font-size: 13px; font-family: pLight; line-height: 145%; } 
+.goPay { width: 100%; margin-top: 15px; padding: 20px 0; font-size: 19px; font-family: pBold; color: #fff; letter-spacing: 0.5px; background: var(--color-main); border-radius: 0 0 10px 10px; cursor: pointer; } 
+
+
+/* --------------- calendar ---------------- */
+.dayActive { color: var(--color-main); font-family: pSemi; }
+.calendar { padding: 10px; font-family: pRegular; line-height: 1.2; text-align: center; border: 2px solid #edeff2; border-radius: 8px; user-select: none; } 
+.ui-widget.ui-widget-content { /* 전체 박스 */ width: 100%; border: none; padding:0; border-radius: 10px; } 
+.ui-widget-header { font-size: 15px; border: none; border-radius: 0px; } 
+.ui-widget-header .ui-icon { /* 이전,다음 화살표 */ background: none; } 
+.ui-datepicker-prev span { display: none; } 
+.ui-datepicker-next span { display: none; } 
+
+.ui-datepicker-prev,
+.ui-datepicker-next { position: absolute; top: 8px; display: block; height: 20px; padding: 0; width: 20px; text-indent: -9999px; background: transparent; border: none; cursor: pointer; outline: none; overflow: hidden; }
+.ui-datepicker-prev:before,
+.ui-datepicker-next:before { content: ""; position: absolute; top: 6px; display: block; height: 8px; width: 8px; border-left: 1px solid #000; border-top: 1px solid #000; transform-origin: center; transition: all .2s;} 
+
+.ui-datepicker-prev:hover,
+.ui-datepicker-next:hover { background: none; border: none;}
+.ui-datepicker-prev:hover:before,
+.ui-datepicker-next:hover:before { border-color: var(--dark-yellow); } 
+
+.ui-datepicker-prev { left: 10px; } 
+.ui-datepicker-prev:before { left: 8px; transform: rotate(-45deg); } 
+.ui-datepicker-next { right: 10px; } 
+.ui-datepicker-next:before { right: 8px; transform: rotate(135deg); }  
+
+.ui-datepicker .ui-datepicker-header { background: #fff; border-radius: 10px 10px 0 0; } 
+.ui-datepicker .ui-datepicker-title { font-size: 17px; } 
+.ui-datepicker .ui-datepicker-title .ui-datepicker-year { color: var(--color-main); font-family: pSemi;} 
+.ui-datepicker .ui-datepicker-title .ui-datepicker-month { font-family: pBold; } 
+.ui-datepicker th { /* 요일 영역 */ padding: 12px 0; } 
+.ui-datepicker th span { /* 요일 텍스트 */  font-size: 12px; font-weight: normal; color: #b2b2b2; font-family: pLight; } 
+.ui-datepicker td a { display: inline-block;}
+
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default, 
+.ui-button, .ui-button.ui-state-disabled:hover, 
+.ui-button.ui-state-disabled:active { /* 일자 기본영역 */ border: none; background: none ; font-family: pSemi; font-size: 16px; text-align: center; width: 25px; height: 24px; line-height: 24px; border-radius: 15px; } 
+.ui-state-highlight, 
+.ui-widget-content .ui-state-highlight, 
+.ui-widget-header .ui-state-highlight { /* 오늘일자 */
+border: none; background:var(--yellow) !important; color: #000 !important; } 
+
+.ui-state-active, 
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active, 
+a.ui-button:active, .ui-button:active, 
+.ui-button.ui-state-active:hover { /* 선택 일자 */
+border: none; background: var(--color-main); } 
+
+.dayPrice { font-size: 12px; font-family: pLight; text-align: center; }
+
+.pagination { margin: 40px auto; display: flex; align-items: center; justify-content: center;}
+.pagination .pageNum { display: inline-block; width: 25px; height: 25px; margin: 0 5px; font-family: pRegular; font-size: 14px; background: transparent; border-radius: 20px; color: #444; text-align: center; line-height: 25px; cursor: pointer; transition: all .2s;}
+.pagination .pageNum:hover { background-color: #ffd43856; }
+.pagination .pageNum.active { color: #000; background-color: var(--yellow); }
+.pagination .arrow { width: 12px; height: 12px;  opacity: .5; cursor: pointer; transition: all .2s;}
+.pagination .prevBtn { margin-right: 5px; background: url(../source/arrow_l.png) center center; background-size: cover; }
+.pagination .nextBtn { margin-left: 5px; background: url(../source/arrow_r.png) center center; background-size: cover; }
+.pagination .arrow:hover { opacity: 1; }
+

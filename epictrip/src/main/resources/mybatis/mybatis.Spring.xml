@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="user" type="com.web.epictrip.vo.User"/>
+		<typeAlias alias="company" type="com.web.epictrip.vo.Company"/>
+		<typeAlias alias="scheduledt" type="com.web.epictrip.vo.Schedule_Place_dt"/>
+		<typeAlias alias="scheduledtsel" type="com.web.epictrip.vo.Schedule_Place_select"/>
+		<typeAlias alias="Schedulesel" type="com.web.epictrip.vo.Schedule_select"/>
+		<typeAlias alias="place" type="com.web.epictrip.vo.Place"/>
+		<typeAlias alias="scheduleins01" type="com.web.epictrip.vo.Schedule_insert01"/>
+		<typeAlias alias="scheduleins02" type="com.web.epictrip.vo.Schedule_insert02"/>
+		<typeAlias alias="product" type="com.web.epictrip.vo.Product"/>
+		<typeAlias alias="product_list" type="com.web.epictrip.vo.Product_List"/>
+		<typeAlias alias="product_page" type="com.web.epictrip.vo.Product_Page"/>
+		<typeAlias alias="countrynum" type="com.web.epictrip.vo.StoreCountryNum"/>
+		<typeAlias alias="comment_info" type="com.web.epictrip.vo.ProductComment_Info"/>
+		<typeAlias alias="comment_page" type="com.web.epictrip.vo.ProductComment_Page"/>
+		<typeAlias alias="companypage" type="com.web.epictrip.vo.Company_Page"/>
+		<typeAlias alias="payment" type="com.web.epictrip.vo.Payment"/>
+		<typeAlias alias="schedule_list" type="com.web.epictrip.vo.Schedule_List"/>
+		<typeAlias alias="schedule_list_info" type="com.web.epictrip.vo.Schedule_List_Info"/>
+		<typeAlias alias="level" type="com.web.epictrip.vo.Level_Vo"/>
+	    <typeAlias alias="payment2" type="com.web.epictrip.vo.PaymentDTO"/>
+	    <typeAlias alias="review" type="com.web.epictrip.vo.ReviewDTO"/>
+	    <typeAlias alias="companion" type="com.web.epictrip.vo.CompanionDTO"/>
+	    <typeAlias alias="schedule" type="com.web.epictrip.vo.ScheduleDTO"/>
+	    <typeAlias alias="wishlist" type="com.web.epictrip.vo.WishlistDTO"/>
+	    <typeAlias alias="admin" type="com.web.epictrip.vo.Admin_Vo"/>
+	    <typeAlias alias="month" type="com.web.epictrip.vo.Admin_Month_Vo"/>
+	</typeAliases>
+</configuration>
+
+

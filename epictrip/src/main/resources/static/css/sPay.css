@@ -1,0 +1,101 @@
+section { min-height: calc(100vh - 240px); margin-top: 150px; margin-bottom: 120px; padding: 0 15%;}
+.payWrap{display: flex; justify-content: space-between;}
+.buyerInfo{width: 700px; margin-top: 35px;}
+.buyerInfo h1{font-family: pSemi; font-size: 24px;}
+.bIline{width: 100%; height: 30px; border-bottom: solid 1px var(--color-line); margin-bottom: 30px;}
+.buyerInfo h2{font-family: pSemi; font-size: 20px; color: #282828; margin-bottom: 40px;}
+.buyerInfoList{width: 80%;}
+
+.nameGen{display: flex; justify-content: space-between; width: 100%; margin-bottom: 40px;}
+.nameGen p{margin-bottom: 10px;}
+.nameGen span input{padding: 8px 20px; width: 100%; border: solid 1px var(--color-line); border-radius: 5px; font-family: pMedium;}
+.nameGen span input:focus{border: solid 1px var(--color-main);}
+select{padding: 7px 20px; width: 275px; border: solid 1px var(--color-line); border-radius: 5px; font-family: pMedium;}
+select:focus{border: solid 1px var(--color-main);}
+
+.birth{margin-bottom: 40px;}
+.birth p{margin-bottom: 10px;}
+input[type=date]{width: 94%; padding: 8px 20px; border: solid 1px var(--color-line); border-radius: 5px; font-family: pMedium;}
+input[type=date]:focus{border: solid 1px var(--color-main);}
+
+.phoneNum{margin-bottom: 40px;}
+.phoneNum p{margin-bottom: 10px;}
+input[type=number]{padding: 8px 20px; width: 93.5%; border: solid 1px var(--color-line); border-radius: 5px; font-family: pMedium;}
+input[type=number]:focus{border: solid 1px var(--color-main);}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}
+
+.email p{margin-bottom: 10px;}
+.email input{padding: 8px 20px; width: 93.5%; border: solid 1px var(--color-line); border-radius: 5px; font-family: pMedium;}
+.email input:focus{border: solid 1px var(--color-main);}
+.checkEmail{font-size: 15px; color: #ff6060; margin-top: 10px;}
+
+/* ========= 결제 창 ============= */
+.itemInfo{width: calc(100vw * 430 / 1920); border: solid 1px var(--color-line); border-radius: 10px;}
+.itemInfoInner{width: 85%; margin: 30px auto;}
+.itemInfoInner h1{font-family: pSemi; font-size: 24px; margin-bottom: 15px;}
+.ment{font-family: pLight; font-size: 16px; color: #6C6C6C;}
+/* =========== 상품 이미지, 텍스트============== */
+.itemThumb{margin-top: 20px; margin-bottom: 35px; display: flex;}
+.imgWrap{width: 92px; height: 92px;}
+.itemThtext{width: 280px; margin-left: 18px; display: flex; flex-direction: column; justify-content: space-between;}
+.itemThtext span{line-height: 150%;}
+.imgWrap img{width: 100%; height: 100%; object-fit: cover; border-radius: 5px;}
+/* ======= 선택한 상품 가격과 갯수=========== */
+.selP{font-family: pSemi; font-size: 17px; color: #525252;}
+.selectItem{background-color: #f8f8f8; margin-top: 20px; margin-bottom: 20px; padding: 20px; border-radius: 10px;}
+.selectItem span{font-size: 18px; font-family: pSemi;}
+.datePrice{display: flex; justify-content: space-between; align-items: center; padding-top: 10px;}
+.datePrice p{font-family: pMedium; font-size: 14px; color: #696969;}
+.datePrice h3{font-family: pMedium; font-size: 24px; color: #555555;}
+/* ========== 포인트 사용 =============== */
+.point{display: flex; align-items: center;}
+.point p{font-family: pSemi; font-size: 17px; color: #525252;}
+.point span{font-family: pMedium; font-size: 14px; color: #525252; margin-left: 17px;}
+.usePoint{margin-top: 15px; display: flex; justify-content: space-between;}
+.usePoint input{padding: 15px 20px; width: 58%; border-radius: 5px; border: solid 1px var(--color-line); font-family: pMedium;}
+.usePoint input:focus{border: solid 1px var(--color-main);}
+.usePoint button{background-color: #f4f4f4; padding: 0 20px; font-family: pSemi; font-size: 15px; color: var(--color-main); 
+border: solid 1px var(--color-line); border-radius: 5px; cursor: pointer;}
+.payLine{height: 30px; border-bottom: solid 1px var(--color-line); margin-bottom: 30px;}
+
+/* ============= 결제 금액 확인 =========== */
+.priceInfo h3{font-family: pSemi; font-size: 17px; color: #525252;}
+.pspt{margin-top: 20px;}
+.psptIn{width: 100%; height: 22px; display: flex; -webkit-box-align: center;align-items: center; -webkit-box-pack: justify; justify-content: space-between; 
+margin-top: 15px; font-size: 15px; color: #525252;}
+.pspBlue{color: rgb(96, 152, 255);}
+.tot{font-family: pBold; font-size: 20px; color: var(--color-main); margin-top: 20px;}
+.totment{font-size: 17px;}
+/* ========== 결제 방법============ */
+.hP{font-family: pSemi; font-size: 17px; color: #525252;}
+.howPay{display: flex; justify-content: space-between;}
+.howPay button{padding: 25px 10px; margin-bottom: 20px; width: 48%; margin-top: 25px; border: solid 1px var(--color-line); border-radius: 5px; font-family: pMedium; font-size: 17px;
+background-color: white; cursor: pointer;}
+.howPay button:hover{border: solid 1px var(--color-main); transition: all .3s;}
+.howPay button.selected{background-color: var(--color-main); color: white; border: solid 1px var(--color-main);}
+/* ========= 최종 결제 버튼 =========== */
+.itemBtn{width: 100%; height: 75px; background-color: var(--color-main); color: white; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;
+border: solid 1px var(--color-main); font-family: pBold; font-size: 20px; cursor: pointer;}
+
+.infoTop { display: flex; align-items: center; justify-content: space-between;}
+.infoTop span { display: flex; align-items: center;}
+
+.lBtn { display: none; }
+.lBtn + label { position: relative; width: calc(100vw * 40 / 1920); height: calc(100vw * 40 / 1920); cursor: pointer; transition: all .2s; }
+label[for='langKor'] { margin-right: 10px; background: url(../source/korBtn.png) center center; background-size: cover; }
+label[for='langUs'] { background: url(../source/usBtn.png) center center; background-size: cover; }
+
+label[for='langKor']::before, label[for='langUs']::before { position: absolute; top: calc(100vw * 1 / 1920); left: calc(100vw * 1 / 1920); width: calc(100vw * 38 / 1920); height: calc(100vw * 38 / 1920); background: #0000009b; line-height: calc(100vw * 38 / 1920); text-align: center; font-family: pMedium; font-size: 13px; color: #fff; border-radius: 50%; opacity: 0; transition: all .3s; }
+label[for='langKor']::before { content: 'Kor'; }
+label[for='langUs']::before { content: 'Eng'; }
+label[for='langKor']:hover::before, label[for='langUs']:hover::before { opacity: 1; } 
+
+.lBtn:checked + label::before { opacity: 1; }
+
+
+
+
+
+
+

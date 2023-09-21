@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >	
+	
+<mapper namespace="com.web.epictrip.dao.Main_Dao">
+	<select id="Main_List_Store" resultType="product_list">
+		SELECT *
+		FROM (
+		    SELECT 
+				prodkey, prodloc, country, price, prodtitle, titleimage, hits, updtdate, startdate, enddate
+		    FROM product
+		    ORDER BY UPDTDATE DESC
+		)
+		WHERE ROWNUM <![CDATA[<=]]> 4
+	</select>
+	
+	
+	
+	<!-- 일정 게시물  -->
+	<select id="Main_List_Schedule01" resultType="schedule_list">
+			SELECT *
+			FROM (
+		        select 
+		        	s.schedule_key, s.userid, s.creatdate, s.loc, to_char(s.startdate,'YYYY-MM-DD') AS startdate,
+		        	to_char(s.enddate,'YYYY-MM-DD') AS enddate, TRUNC(s. enddate- s.startdate)+1 as period,
+		        	s.hits, u.name, TRUNC(MONTHS_BETWEEN(SYSDATE, u.birth) / 12) AS age, u.image , u.gender
+		        from schedule s
+		        JOIN userInfo u ON s.userid = u.userid
+	        		)
+			WHERE ROWNUM <![CDATA[<=]]> 8
+	</select>
+	
+	<select id="Main_List_Schedule02" resultType="schedule_list_info" parameterType="string">
+		SELECT
+			sp.schedule_key, sp.day_num, p.name, p.lat, p.lng
+		FROM
+		    Schedule_Place sp
+		JOIN
+		    Schedule s ON s.schedule_key = sp.schedule_key
+		JOIN
+		    Place p ON sp.place_key = p.place_key
+		WHERE
+		    sp.schedule_key = #{schedule_key}
+	</select>
+
+</mapper>
